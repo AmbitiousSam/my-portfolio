@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import HeroTerminal from './HeroTerminal';
 
 const TAGS = [
   'Remote-Ready',
@@ -63,75 +63,87 @@ export default function Hero() {
       {/* Bottom fade */}
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0a0a0a] to-transparent" aria-hidden="true" />
 
-      <div className="relative max-w-6xl mx-auto px-5 sm:px-8 w-full py-28 md:py-36">
-        {/* Available badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1e3a24] bg-[#0d1f11] mb-10">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" aria-hidden="true" />
-          <span className="text-[#4ade80] text-[12px] font-medium tracking-wide">Available for new roles</span>
-        </div>
+      <div className="relative max-w-6xl mx-auto px-5 sm:px-8 w-full py-24 md:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-        {/* Headline */}
-        <h1 className="text-[52px] sm:text-[68px] lg:text-[82px] font-extrabold text-[#f5f5f5] tracking-[-0.03em] leading-[1.02] mb-6">
-          Platform &amp;<br />
-          Full&#8209;Stack<br />
-          <span className="text-[#3b82f6]">Engineer</span>
-        </h1>
+          {/* Left — text content */}
+          <div>
+            {/* Available badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1e3a24] bg-[#0d1f11] mb-10">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" aria-hidden="true" />
+              <span className="text-[#4ade80] text-[12px] font-medium tracking-wide">Available for new roles</span>
+            </div>
 
-        <p className="text-[#777777] text-[17px] sm:text-[19px] leading-relaxed max-w-[560px] mb-9 font-normal">
-          I build production AWS infrastructure, ship full-stack features, and architect AI workflow systems.{' '}
-          <span className="text-[#999999]">4+ years delivering for a US product company, fully remote.</span>
-        </p>
+            {/* Headline */}
+            <h1 className="text-[48px] sm:text-[60px] lg:text-[68px] font-extrabold text-[#f5f5f5] tracking-[-0.03em] leading-[1.02] mb-6">
+              Platform &amp;<br />
+              Full&#8209;Stack<br />
+              <span className="text-[#3b82f6]">Engineer</span>
+            </h1>
 
-        {/* Tag pills */}
-        <div className="flex flex-wrap gap-2 mb-11">
-          {TAGS.map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#111111] text-[#777777] text-[12.5px] font-medium tracking-wide"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+            <p className="text-[#777777] text-[16px] sm:text-[18px] leading-relaxed max-w-[500px] mb-9 font-normal">
+              I build production AWS infrastructure, ship full-stack features, and architect AI workflow systems.{' '}
+              <span className="text-[#999999]">4+ years delivering for a US product company, fully remote.</span>
+            </p>
 
-        {/* CTA buttons */}
-        <div className="flex flex-wrap gap-3 mb-14">
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#3b82f6] text-white text-[14.5px] font-semibold hover:bg-[#2563eb] transition-colors duration-150"
-          >
-            View My Work
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-          <a
-            href="/resume.pdf"
-            download
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#2a2a2a] text-[#c0c0c0] text-[14.5px] font-semibold hover:border-[#3a3a3a] hover:bg-[#111111] hover:text-[#f5f5f5] transition-all duration-150"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
-            </svg>
-            Download Resume
-          </a>
-        </div>
+            {/* Tag pills */}
+            <div className="flex flex-wrap gap-2 mb-10">
+              {TAGS.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#111111] text-[#777777] text-[12.5px] font-medium tracking-wide"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
 
-        {/* Social links */}
-        <div className="flex items-center gap-1">
-          {SOCIALS.map(({ name, href, icon }) => (
-            <a
-              key={name}
-              href={href}
-              target={href.startsWith('mailto') ? undefined : '_blank'}
-              rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-              className="flex items-center justify-center w-9 h-9 rounded-lg text-[#555555] hover:text-[#f5f5f5] hover:bg-[#1a1a1a] transition-all duration-150"
-              aria-label={name}
-            >
-              {icon}
-            </a>
-          ))}
-          <span className="ml-2 text-[#333333] text-[13px]">sk800489@gmail.com</span>
+            {/* CTA buttons */}
+            <div className="flex flex-wrap gap-3 mb-12">
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#3b82f6] text-white text-[14.5px] font-semibold hover:bg-[#2563eb] transition-colors duration-150"
+              >
+                View My Work
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a
+                href="/resume.pdf"
+                download
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#2a2a2a] text-[#c0c0c0] text-[14.5px] font-semibold hover:border-[#3a3a3a] hover:bg-[#111111] hover:text-[#f5f5f5] transition-all duration-150"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                </svg>
+                Download Resume
+              </a>
+            </div>
+
+            {/* Social links */}
+            <div className="flex items-center gap-1">
+              {SOCIALS.map(({ name, href, icon }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target={href.startsWith('mailto') ? undefined : '_blank'}
+                  rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                  className="flex items-center justify-center w-9 h-9 rounded-lg text-[#555555] hover:text-[#f5f5f5] hover:bg-[#1a1a1a] transition-all duration-150"
+                  aria-label={name}
+                >
+                  {icon}
+                </a>
+              ))}
+              <span className="ml-2 text-[#333333] text-[13px]">sk800489@gmail.com</span>
+            </div>
+          </div>
+
+          {/* Right — animated terminal */}
+          <div className="hidden lg:flex justify-end items-center">
+            <HeroTerminal />
+          </div>
+
         </div>
       </div>
     </section>
