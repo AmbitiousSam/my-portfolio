@@ -10,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://siva-kumar.vercel.app"),
   title: "Siva Kumar — Platform & Full-Stack Engineer",
   description:
     "Platform & Full-Stack Engineer with 4+ years building production AWS infrastructure, full-stack Rails/React systems, and AI workflow pipelines. AWS SA Professional. Based in Hyderabad, India. Open to remote contracts & full-time.",
