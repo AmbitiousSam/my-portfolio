@@ -103,11 +103,9 @@ export default function Contact() {
           {/* Contact form */}
           <div className="rounded-xl border border-[#1a1a1a] bg-[#0d0d0d] p-7">
             <p className="text-[13px] font-semibold text-[#555555] mb-6">Send a message</p>
-            {/* TODO: Replace action with Formspree endpoint, e.g. https://formspree.io/f/YOUR_FORM_ID */}
             <form
-              action="mailto:sk800489@gmail.com"
+              action="https://formspree.io/f/xlgkrwrr"
               method="POST"
-              encType="text/plain"
               className="space-y-4"
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
